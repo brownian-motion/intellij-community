@@ -126,21 +126,30 @@
 
     <elementDescriptionProvider implementation="org.jetbrains.idea.maven.dom.MavenModelDocumentationProvider" order="first"/>
 
-    <localInspection language="XML" shortName="MavenModelInspection" bundle="messages.MavenDomBundle" key="inspection.name" groupKey="inspection.group"
+    <localInspection language="XML" shortName="MavenModelInspection" bundle="messages.MavenDomBundle" key="inspection.name"
+                     groupKey="inspection.group"
                      enabledByDefault="true" level="ERROR"
                      implementationClass="org.jetbrains.idea.maven.dom.inspections.MavenModelInspection"/>
-    <localInspection language="XML" shortName="MavenDuplicateDependenciesInspection" bundle="messages.MavenDomBundle" key="inspection.duplicate.dependencies.name"
+    <localInspection language="XML" shortName="MavenDuplicateDependenciesInspection" bundle="messages.MavenDomBundle"
+                     key="inspection.duplicate.dependencies.name"
                      groupKey="inspection.group" enabledByDefault="true" level="WARNING"
                      implementationClass="org.jetbrains.idea.maven.dom.inspections.MavenDuplicateDependenciesInspection"/>
-    <localInspection language="XML" shortName="MavenDuplicatePluginInspection" bundle="messages.MavenDomBundle" key="inspection.duplicate.plugin.declaration"
+    <localInspection language="XML" shortName="MavenDuplicatePluginInspection" bundle="messages.MavenDomBundle"
+                     key="inspection.duplicate.plugin.declaration"
                      groupKey="inspection.group" enabledByDefault="true" level="WARNING"
                      implementationClass="org.jetbrains.idea.maven.dom.inspections.MavenDuplicatePluginInspection"/>
-    <localInspection language="XML" shortName="MavenRedundantGroupId" bundle="messages.MavenDomBundle" key="inspection.redundant.groupId.name"
+    <localInspection language="XML" shortName="MavenRedundantGroupId" bundle="messages.MavenDomBundle"
+                     key="inspection.redundant.groupId.name"
                      groupKey="inspection.group" enabledByDefault="true" level="WARNING"
                      implementationClass="org.jetbrains.idea.maven.dom.inspections.MavenRedundantGroupIdInspection"/>
-    <localInspection language="XML" shortName="MavenPropertyInParent" bundle="messages.MavenDomBundle" key="inspection.property.in.parent.name"
+    <localInspection language="XML" shortName="MavenPropertyInParent" bundle="messages.MavenDomBundle"
+                     key="inspection.property.in.parent.name"
                      groupKey="inspection.group" enabledByDefault="true" level="WARNING"
                      implementationClass="org.jetbrains.idea.maven.dom.inspections.MavenPropertyInParentInspection"/>
+    <localInspection language="XML" shortName="MavenUnsortedDependenciesInspection" bundle="messages.MavenDomBundle"
+                     key="inspection.unsorted.dependencies.name"
+                     groupKey="inspection.group" enabledByDefault="true" level="WARNING"
+                     implementationClass="org.jetbrains.idea.maven.dom.inspections.MavenUnsortedDependenciesInspection"/>
     <xml.xmlExtension implementation="org.jetbrains.idea.maven.dom.MavenXmlExtension"/>
     <dom.extender domClass="org.jetbrains.idea.maven.dom.model.MavenDomConfiguration"
                   extenderClass="org.jetbrains.idea.maven.dom.MavenPluginConfigurationDomExtender"/>
@@ -200,6 +209,7 @@
 
     <intentionAction>
       <className>org.jetbrains.idea.maven.dom.intentions.ChooseFileIntentionAction</className>
+      <className>org.jetbrains.idea.maven.dom.intentions.SortMavenDependenciesIntentionAction</className>
     </intentionAction>
 
     <problemHighlightFilter implementation="org.jetbrains.idea.maven.utils.ArchetypeResourceHighlightFilter"/>
